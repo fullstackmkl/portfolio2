@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automate VMS Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Automate VMS Report</h1>
+  </header>
+  <section id="upload">
+    <h2>Upload Your VMS Report</h2>
+    <select id="notificationType">
+  <option value="enterValue">Select an option...</option>
+      <option value="timesheetReminder">Timesheet Reminder</option>
+      <option value="draftTimesheetSubmittal">Draft Timesheet Submittal</option>
+      <option value="auditReminder">Audit Reminder</option>
+    </select>
+    <input type="file" id="fileInput" accept=".xlsx, .xls">
+    <button onclick="processFile()">Process File</button>
+    <p id="error-message" class="error-message"></p>
+  </section>
+  <section id="emails">
+    <h2>Generated Emails</h2>
+    <div id="emailDrafts"></div>
+    <button id="openAllEmailsButton" style="display:none;" onclick="openAllEmailsSequentially()">Open All Emails in Outlook</button>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
